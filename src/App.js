@@ -1,7 +1,11 @@
-const App = () => {
+import Welcome from "./components/Pages/Welcome";
+
+function App() {
     return (
-        <h1>React APP</h1>
-    )
+        <div>
+            <Welcome/>
+        </div>
+    );
 }
 
-export default App
+export default App;
