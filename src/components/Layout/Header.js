@@ -1,5 +1,6 @@
 import {useState} from "react";
-import Navigation from "./Navigation";
+import ProductNavigation from "./ProductNavigation";
+import UserNavigation from "./UserNavigation";
 
 import css from './Header.module.css'
 import humming from "../../assets/humming-white.svg";
@@ -13,7 +14,8 @@ const Header = () => {
                 <img src={humming} alt={'humming bird'}/>
                 <h1>Shopyfly</h1>
             </div>
-            {isLoggedIn && <Navigation/>}
+            {isLoggedIn && <ProductNavigation/>}
+            {isLoggedIn && <UserNavigation/>}
         </header>
 
     )
