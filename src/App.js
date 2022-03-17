@@ -1,10 +1,11 @@
+import {Fragment} from "react";
 import Welcome from "./components/Pages/Welcome";
 
 function App() {
     return (
-        <div>
+        <Fragment>
             <Welcome/>
-        </div>
+        </Fragment>
     );
 }
 

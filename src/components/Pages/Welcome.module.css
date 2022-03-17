@@ -1,0 +1,47 @@
+.welcome {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10vh;
+    padding: 10vh;
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #00baff;
+}
+
+.login {
+    display: flex;
+    flex-direction: column;
+}
+
+.login label {
+    font-weight: bold;
+    color: #222831;
+    margin-bottom: 0.5rem;
+}
+
+.login input {
+    padding: 0.35rem 0.35rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    margin-bottom: 1rem;
+}
+
+.login input:last-of-type {
+    margin-bottom: 1.5rem;
+}
+
+.login input:focus {
+    outline: none;
+    border-color: #222831;
+    background: #66D9FF;
+}
+
+.login.invalid input {
+    border-color: red;
+    background: #fbdada;
+}
