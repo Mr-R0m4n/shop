@@ -1,6 +1,12 @@
+import {Fragment} from "react";
+import Header from "../Layout/Header";
+
 const Detail = () => {
     return (
-        <h1>DETAILPAGE</h1>
+        <Fragment>
+            <Header/>
+            <h1>DETAILPAGE</h1>
+        </Fragment>
     );
 };
 

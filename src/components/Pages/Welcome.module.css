@@ -16,6 +16,7 @@
 .login {
     display: flex;
     flex-direction: column;
+    width: 10%;
 }
 
 .login label {
@@ -38,7 +39,7 @@
 .login input:focus {
     outline: none;
     border-color: #222831;
-    background: #66D9FF;
+    background: rgba(102, 217, 255, 0.3);
 }
 
 .login.invalid input {

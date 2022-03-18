@@ -1,21 +1,40 @@
+import {useNavigate} from "react-router-dom";
+import {useDispatch} from "react-redux";
 import Button from "../UI/Button";
 
-import css from './UserNavigation.module.css'
-import bag from '../../assets/bag.svg'
-import user from '../../assets/user.svg'
+import css from './UserNavigation.module.css';
+import bag from '../../assets/bag.svg';
+import user from '../../assets/user.svg';
 
 const UserNavigation = () => {
+
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
+
+    const buttonCartLink = () => {
+        navigate('/cart');
+    };
+
+    const buttonUserLink = () => {
+        navigate('/user');
+    };
+
+    const buttonLogout = () => {
+        navigate('/');
+        dispatch({type: 'logout'});
+    };
+
     return (
         <div className={css.userNavigation}>
-            <Button type={'button'}>
+            <Button onClick={buttonCartLink} type={'button'}>
                 <img className={css.icon} src={bag} alt={'shopping bag'}/>
             </Button>
-            <Button type={'button'}>
+            <Button onClick={buttonUserLink} type={'button'}>
                 <img className={css.icon} src={user} alt={'user icon'}/>
             </Button>
-            <Button type={'button'}>Logout</Button>
+            <Button onClick={buttonLogout} type={'button'}>Logout</Button>
         </div>
     );
 };
 
-export default UserNavigation
+export default UserNavigation;

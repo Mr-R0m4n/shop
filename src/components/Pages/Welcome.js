@@ -1,11 +1,23 @@
 import {Fragment} from "react";
-import Header from "../Layout/Header";
-import humming from '../../assets/humming-blue.svg'
-
-import css from './Welcome.module.css'
+import {useNavigate} from 'react-router-dom';
+import {useDispatch} from "react-redux";
 import Button from "../UI/Button";
+import Header from "../Layout/Header";
+
+import css from './Welcome.module.css';
+import humming from '../../assets/humming-blue.svg';
 
 const Welcome = () => {
+
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
+
+    const buttonLogin = (event) => {
+        event.preventDefault();
+        dispatch({type: 'login'});
+        navigate('/main');
+    };
+
     return (
         <Fragment>
             <Header/>
@@ -19,7 +31,7 @@ const Welcome = () => {
                     <input autoComplete={'email'} type={'email'}/>
                     <label>Password:</label>
                     <input autoComplete={'password'} type={'password'}/>
-                    <Button type={'submit'}>Login</Button>
+                    <Button onClick={buttonLogin} type={'submit'}>Login</Button>
                 </form>
             </main>
         </Fragment>
