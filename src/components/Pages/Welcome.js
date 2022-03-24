@@ -1,6 +1,7 @@
 import {Fragment} from "react";
 import {useNavigate} from 'react-router-dom';
 import {useDispatch} from "react-redux";
+import {authActions} from "../../store/auth-slice";
 import Button from "../UI/Button";
 import Header from "../Layout/Header";
 
@@ -8,13 +9,12 @@ import css from './Welcome.module.css';
 import humming from '../../assets/humming-blue.svg';
 
 const Welcome = () => {
-
     const navigate = useNavigate();
     const dispatch = useDispatch();
 
     const buttonLogin = (event) => {
         event.preventDefault();
-        dispatch({type: 'login'});
+        dispatch(authActions.login());
         navigate('/main');
     };
 

@@ -1,21 +1,10 @@
-import {createStore} from "redux";
+import {configureStore} from '@reduxjs/toolkit';
+import authReducer from "./auth-slice";
 
-const loginReducer = (state = {isLoggedIn: localStorage.getItem('isLoggedIn')}, action) => {
-    if (action.type === 'login') {
-        localStorage.setItem('isLoggedIn' , 'true')
-        return {
-            isLoggedIn: localStorage.getItem('isLoggedIn')
-        };
+const store = configureStore({
+    reducer: {
+        auth: authReducer
     }
-    if (action.type === 'logout') {
-        localStorage.removeItem('isLoggedIn')
-        return {
-            isLoggedIn: false
-        };
-    }
-    return state;
-};
-
-const store = createStore(loginReducer);
+});
 
 export default store;

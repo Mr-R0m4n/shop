@@ -1,5 +1,6 @@
 import {useNavigate} from "react-router-dom";
 import {useDispatch} from "react-redux";
+import {authActions} from "../../store/auth-slice";
 import Button from "../UI/Button";
 
 import css from './UserNavigation.module.css';
@@ -21,7 +22,7 @@ const UserNavigation = () => {
 
     const buttonLogout = () => {
         navigate('/');
-        dispatch({type: 'logout'});
+        dispatch(authActions.logout());
     };
 
     return (

@@ -8,7 +8,7 @@ import {useEffect} from "react";
 import {useSelector} from "react-redux";
 
 function App() {
-    const isLoggedIn = useSelector(state => state.isLoggedIn);
+    const isLoggedIn = useSelector(state => state.auth.isLoggedIn);
     const navigate = useNavigate();
 
     // useEffect(() => {

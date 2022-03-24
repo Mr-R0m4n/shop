@@ -6,7 +6,7 @@ import css from './Header.module.css'
 import humming from "../../assets/humming-white.svg";
 
 const Header = () => {
-    const isLoggedIn = useSelector(state => state.isLoggedIn);
+    const isLoggedIn = useSelector(state => state.auth.isLoggedIn);
     console.log(isLoggedIn)
 
     return(
