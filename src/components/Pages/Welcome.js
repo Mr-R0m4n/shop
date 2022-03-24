@@ -2,6 +2,7 @@ import {Fragment} from "react";
 import {useNavigate} from 'react-router-dom';
 import {useDispatch} from "react-redux";
 import {authActions} from "../../store/auth-slice";
+import {fetchShopData} from "../../store/fetch-slice";
 import Button from "../UI/Button";
 import Header from "../Layout/Header";
 
@@ -14,6 +15,7 @@ const Welcome = () => {
 
     const buttonLogin = (event) => {
         event.preventDefault();
+        dispatch(fetchShopData());
         dispatch(authActions.login());
         navigate('/main');
     };
