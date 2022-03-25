@@ -1,7 +1,7 @@
 .login {
     display: flex;
     flex-direction: column;
-    width: 10%;
+    width: 300px;
 }
 
 .login label {
@@ -14,6 +14,7 @@
     padding: 0.35rem 0.35rem;
     border-radius: 6px;
     margin-bottom: 1rem;
+    width: 100%;
 }
 
 .login input:last-of-type {
@@ -38,4 +39,41 @@
 .invalid:focus {
     outline: none;
     border: 2px solid red;
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 200px;
+    background-color: #555;
+    color: #fff;
+    text-align: left;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    left: 125%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+    content: " ";
+    position: absolute;
+    top: 15%;
+    right: 100%;
+    margin-top: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent #555 transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
 }

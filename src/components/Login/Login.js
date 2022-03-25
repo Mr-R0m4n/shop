@@ -1,5 +1,5 @@
 import {useDispatch, useSelector} from "react-redux";
-import {verifyActions} from "../../store/verify-slice";
+import {validActions} from "../../store/valid-slice";
 import {fetchShopData} from "../../store/fetch-slice";
 import {authActions} from "../../store/auth-slice";
 import {useNavigate} from "react-router-dom";
@@ -10,52 +10,50 @@ import css from "./Login.module.css";
 const Login = () => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
-    const emailIsValid = useSelector(state => state.verify.emailIsValid)
-    const passwordIsValid = useSelector(state => state.verify.passwordIsValid)
-    const emailInputIsTouched = useSelector(state => state.verify.emailInputIsTouched)
-    const passwordInputIsTouched = useSelector(state => state.verify.passwordInputIsTouched)
-    const formIsValid = useSelector(state => state.verify.formIsValid)
+    const emailIsValid = useSelector(state => state.valid.emailIsValid);
+    const passwordIsValid = useSelector(state => state.valid.passwordIsValid);
+    const emailInputIsTouched = useSelector(state => state.valid.emailInputIsTouched);
+    const passwordInputIsTouched = useSelector(state => state.valid.passwordInputIsTouched);
+    const formIsValid = useSelector(state => state.valid.formIsValid);
 
 
     const emailChangeHandler = (event) => {
-        dispatch(verifyActions.emailValidation(event.target.value))
-    }
+        dispatch(validActions.emailValidation(event.target.value));
+    };
 
     const passwordChangeHandler = (event) => {
-        dispatch(verifyActions.passwordValidation(event.target.value))
-    }
+        dispatch(validActions.passwordValidation(event.target.value));
+    };
 
     const validEmailHandler = (event) => {
-        dispatch(verifyActions.emailValidation(event.target.value))
-    }
+        dispatch(validActions.emailValidation(event.target.value));
+    };
 
     const validPasswordHandler = (event) => {
-        dispatch(verifyActions.passwordValidation(event.target.value))
-    }
+        dispatch(validActions.passwordValidation(event.target.value));
+    };
 
     const buttonLogin = (event) => {
         event.preventDefault();
-        dispatch(verifyActions.formValidation())
-        if(formIsValid){
+        dispatch(validActions.formValidation());
+        if (formIsValid) {
             dispatch(fetchShopData());
             dispatch(authActions.onLogin());
             navigate('/main');
-            dispatch(verifyActions.setInputIsTouchedFalse())
+            dispatch(validActions.setInputIsTouchedFalse());
         }
     };
 
-    let emailCSS, passwordCSS
+    let emailCSS, passwordCSS;
     if (emailInputIsTouched === false || emailIsValid === true) {
-        emailCSS = `${css.valid}`
-    }
-    else if(emailInputIsTouched === true && emailIsValid === false) {
-        emailCSS = `${css.invalid}`
+        emailCSS = `${css.valid}`;
+    } else if (emailInputIsTouched === true && emailIsValid === false) {
+        emailCSS = `${css.invalid}`;
     }
     if (passwordInputIsTouched === false || passwordIsValid === true) {
-        passwordCSS = `${css.valid}`
-    }
-    else if(passwordInputIsTouched === true && passwordIsValid === false) {
-        passwordCSS = `${css.invalid}`
+        passwordCSS = `${css.valid}`;
+    } else if (passwordInputIsTouched === true && passwordIsValid === false) {
+        passwordCSS = `${css.invalid}`;
     }
 
     return (
@@ -69,16 +67,39 @@ const Login = () => {
                 onBlur={validEmailHandler}
             />
             <label>Password:</label>
-            <input
-                className={passwordCSS}
-                autoComplete={'password'}
-                type={'password'}
-                onChange={passwordChangeHandler}
-                onBlur={validPasswordHandler}
-            />
+            <span className={css.tooltip}>
+                <input
+                    className={passwordCSS}
+                    autoComplete={'password'}
+                    type={'password'}
+                    onChange={passwordChangeHandler}
+                    onBlur={validPasswordHandler}
+                />
+                <span className={css.tooltiptext}>
+                    <span>
+                        Password must contain:
+                    </span>
+                    <br/>
+                    <span>
+                        at least 6 characters.
+                    </span>
+                    <br/>
+                    <span>
+                        At least one number,
+                    </span>
+                    <br/>
+                    <span>
+                       one upper case letter and
+                    </span>
+                    <br/>
+                    <span>
+                       one lower case letter
+                    </span>
+                </span>
+            </span>
             <Button onClick={buttonLogin} type={'submit'}>Login</Button>
         </form>
-    )
-}
+    );
+};
 
 export default Login;

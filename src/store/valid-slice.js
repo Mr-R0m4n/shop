@@ -1,7 +1,7 @@
 import {createSlice} from "@reduxjs/toolkit";
 
-const verifySlice = createSlice({
-    name: 'verification',
+const validSlice = createSlice({
+    name: 'validation',
     initialState: {
         emailIsValid: false,
         passwordIsValid: false,
@@ -39,5 +39,5 @@ const verifySlice = createSlice({
     }
 });
 
-export const verifyActions = verifySlice.actions;
-export default verifySlice.reducer;
+export const validActions = validSlice.actions;
+export default validSlice.reducer;
