@@ -1,0 +1,41 @@
+.login {
+    display: flex;
+    flex-direction: column;
+    width: 10%;
+}
+
+.login label {
+    font-weight: bold;
+    color: #222831;
+    margin-bottom: 0.5rem;
+}
+
+.login input {
+    padding: 0.35rem 0.35rem;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+}
+
+.login input:last-of-type {
+    margin-bottom: 2rem;
+}
+
+.valid {
+    border: 1px solid #ccc;
+}
+
+.valid:focus {
+    outline: none;
+    border: 2px solid #222831;
+    background: rgba(102, 217, 255, 0.3);
+}
+
+.invalid {
+    border: 1px solid red;
+    background: #fbdada;
+}
+
+.invalid:focus {
+    outline: none;
+    border: 2px solid red;
+}

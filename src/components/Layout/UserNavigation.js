@@ -24,7 +24,7 @@ const UserNavigation = () => {
     const buttonLogout = () => {
         navigate('/');
         console.log(shopData)
-        dispatch(authActions.logout());
+        dispatch(authActions.onLogout());
     };
 
     return (

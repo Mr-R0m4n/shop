@@ -7,16 +7,16 @@ import Cart from "./components/Pages/Cart";
 import {useSelector} from "react-redux";
 
 function App() {
-    const isLoggedIn = useSelector(state => state.auth.isLoggedIn);
+    const isAuthenticated = useSelector(state => state.auth.isAuthenticated);
 
     return (
         <Routes>
-            <Route path="*" element={isLoggedIn ? <Main/> : <Welcome/>}/>
-            <Route path={'/'} element={isLoggedIn ? <Main/> : <Welcome/>}/>
-            <Route path={'/main'} element={isLoggedIn ? <Main/> : <Welcome/>}/>
-            <Route path={'/user'} element={isLoggedIn ? <User/> : <Welcome/>}/>
-            <Route path={'/product'} element={isLoggedIn ? <Detail/> : <Welcome/>}/>
-            <Route path={'/cart'} element={isLoggedIn ? <Cart/> : <Welcome/>}/>
+            <Route path="*" element={isAuthenticated ? <Main/> : <Welcome/>}/>
+            <Route path={'/'} element={isAuthenticated ? <Main/> : <Welcome/>}/>
+            <Route path={'/main'} element={isAuthenticated ? <Main/> : <Welcome/>}/>
+            <Route path={'/user'} element={isAuthenticated ? <User/> : <Welcome/>}/>
+            <Route path={'/product'} element={isAuthenticated ? <Detail/> : <Welcome/>}/>
+            <Route path={'/cart'} element={isAuthenticated ? <Cart/> : <Welcome/>}/>
         </Routes>
     );
 }
