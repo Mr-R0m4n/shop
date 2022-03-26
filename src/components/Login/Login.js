@@ -14,8 +14,6 @@ const Login = () => {
     const passwordIsValid = useSelector(state => state.valid.passwordIsValid);
     const emailInputIsTouched = useSelector(state => state.valid.emailInputIsTouched);
     const passwordInputIsTouched = useSelector(state => state.valid.passwordInputIsTouched);
-    const formIsValid = useSelector(state => state.valid.formIsValid);
-
 
     const emailChangeHandler = (event) => {
         dispatch(validActions.emailValidation(event.target.value));
@@ -35,8 +33,7 @@ const Login = () => {
 
     const buttonLogin = (event) => {
         event.preventDefault();
-        dispatch(validActions.formValidation());
-        if (formIsValid) {
+        if (passwordIsValid && emailIsValid) {
             dispatch(fetchShopData());
             dispatch(authActions.onLogin());
             navigate('/main');

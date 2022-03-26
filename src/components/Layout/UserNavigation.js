@@ -1,5 +1,5 @@
 import {useNavigate} from "react-router-dom";
-import {useDispatch, useSelector} from "react-redux";
+import {useDispatch} from "react-redux";
 import {authActions} from "../../store/auth-slice";
 import Button from "../UI/Button";
 
@@ -8,8 +8,6 @@ import bag from '../../assets/bag.svg';
 import user from '../../assets/user.svg';
 
 const UserNavigation = () => {
-    const shopData = useSelector(state => state.fetch.data);
-
     const navigate = useNavigate();
     const dispatch = useDispatch();
 
@@ -23,7 +21,6 @@ const UserNavigation = () => {
 
     const buttonLogout = () => {
         navigate('/');
-        console.log(shopData)
         dispatch(authActions.onLogout());
     };
 

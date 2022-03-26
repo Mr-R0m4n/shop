@@ -4,7 +4,7 @@ import axios from "axios";
 const fetchSlice = createSlice({
     name: 'fetchApiData',
     initialState: {
-        data: [],
+        data: JSON.parse(localStorage.getItem('data')),
         isLoading: false,
         error: false,
     },
@@ -17,7 +17,7 @@ const fetchSlice = createSlice({
             state.isLoading = false;
         },
         dataSuccess(state, action) {
-            state.data = action.payload;
+            localStorage.setItem('data', JSON.stringify(action.payload))
             state.isLoading = false;
         }
     }

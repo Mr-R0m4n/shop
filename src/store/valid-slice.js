@@ -7,7 +7,6 @@ const validSlice = createSlice({
         passwordIsValid: false,
         emailInputIsTouched: false,
         passwordInputIsTouched: false,
-        formIsValid: false,
     },
     reducers: {
         emailValidation(state, action) {
@@ -27,10 +26,6 @@ const validSlice = createSlice({
                 state.passwordIsValid = false;
                 state.passwordInputIsTouched = true;
             }
-        },
-        formValidation(state) {
-            state.formIsValid = !!(state.emailIsValid && state.passwordIsValid);
-            console.log(state.formIsValid);
         },
         setInputIsTouchedFalse(state) {
             state.emailInputIsTouched = false;

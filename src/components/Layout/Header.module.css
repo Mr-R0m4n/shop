@@ -6,6 +6,9 @@
     grid-row-gap: 0;
     background: #222831;
     padding: 0 2rem;
+    position: sticky;
+    z-index: 100;
+    top: 0;
     height: 80px;
 }
 

@@ -4,13 +4,17 @@ import CategoryBar from "../Layout/CategoryBar";
 import Products from "../Products/Products";
 import CartBar from "../Layout/CartBar";
 
+import css from './Main.module.css'
+
 const Main = () => {
     return (
         <Fragment>
             <Header/>
-            <CategoryBar/>
-            <Products/>
-            <CartBar/>
+            <main className={css.container}>
+                <CategoryBar/>
+                <Products/>
+                <CartBar/>
+            </main>
         </Fragment>
     );
 };
