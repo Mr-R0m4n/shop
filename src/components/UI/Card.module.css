@@ -1,5 +1,45 @@
 .card {
     border-radius: 25px;
-    padding: 25px;
-    box-shadow: rgba(0, 0, 0, 0.3) 0 10px 20px, rgba(0, 0, 0, 0.3) 0 6px 6px;
+    padding: 0 25px;
+    border: solid 2px #ddd;
+    display: grid;
+    grid-template-rows: 70% 20% 10%;
+    align-content: center;
+}
+
+.image {
+    max-height: 80%;
+    max-width: 100%;
+    justify-self: center;
+    align-self: center;
+}
+
+.title{
+    text-align: center;
+}
+
+.info {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+}
+
+.rate {
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.count {
+    font-size: 0.8rem;
+}
+
+.star {
+    height: 1rem;
+    margin-right: 3px;
+}
+
+.price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    justify-self: right;
 }

@@ -1,6 +1,15 @@
 .products {
     grid-area: 1 / 2 / 2 / 3;
-    border-right: 5px solid #66D9FF;
-    border-left: 5px solid #66D9FF;
-    overflow: auto;
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 20% 20% 20% 20%;
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.products::-webkit-scrollbar {
+    display: none;
 }
