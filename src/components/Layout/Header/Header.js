@@ -3,7 +3,7 @@ import ProductNavigation from "./ProductNavigation";
 import UserNavigation from "./UserNavigation";
 
 import css from './Header.module.css'
-import humming from "../../assets/humming-white.svg";
+import humming from "../../../assets/humming-white.svg";
 import {Link} from "react-router-dom";
 
 const Header = () => {

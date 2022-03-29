@@ -1,11 +1,19 @@
-import {Fragment} from "react";
-import Header from "../Layout/Header";
+import {Fragment, useEffect} from "react";
+import {fetchShopData} from "../../store/fetch-slice";
+import {useDispatch} from "react-redux";
+import Header from "../Layout/Header/Header";
 import Login from "../Login/Login";
 
 import css from './Welcome.module.css';
 import humming from '../../assets/humming-blue.svg';
 
 const Welcome = () => {
+    const dispatch = useDispatch()
+
+    useEffect(()=> {
+        dispatch(fetchShopData());
+    },[])
+
     return (
         <Fragment>
             <Header/>

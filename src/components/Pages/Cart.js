@@ -1,5 +1,5 @@
 import {Fragment} from "react";
-import Header from "../Layout/Header";
+import Header from "../Layout/Header/Header";
 
 const Cart = () => {
     return (

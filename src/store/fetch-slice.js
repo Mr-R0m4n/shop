@@ -4,7 +4,7 @@ import axios from "axios";
 const fetchSlice = createSlice({
     name: 'fetchApiData',
     initialState: {
-        data: JSON.parse(localStorage.getItem('data')),
+        data: JSON.parse(sessionStorage.getItem('data')),
         isLoading: false,
         error: false,
     },
@@ -17,20 +17,21 @@ const fetchSlice = createSlice({
             state.isLoading = false;
         },
         dataSuccess(state, action) {
-            localStorage.setItem('data', JSON.stringify(action.payload))
+            sessionStorage.setItem('data', JSON.stringify(action.payload));
             state.isLoading = false;
         }
     }
 });
 
-const { dataSuccess, loading, hasError} = fetchSlice.actions;
+const {dataSuccess, loading, hasError} = fetchSlice.actions;
 export const fetchShopData = () => async dispatch => {
-    dispatch(loading())
+    dispatch(loading());
     try {
         axios.get('https://fakestoreapi.com/products')
             .then((response) => dispatch(dataSuccess(response.data)));
+        console.log('fetiching')
     } catch (e) {
-        dispatch(hasError)
+        dispatch(hasError);
     }
 };
 

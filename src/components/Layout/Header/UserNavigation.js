@@ -1,11 +1,11 @@
 import {useNavigate} from "react-router-dom";
 import {useDispatch} from "react-redux";
-import {authActions} from "../../store/auth-slice";
-import Button from "../UI/Button";
+import {authActions} from "../../../store/auth-slice";
+import Button from "../../UI/Button";
 
 import css from './UserNavigation.module.css';
-import bag from '../../assets/bag.svg';
-import user from '../../assets/user.svg';
+import bag from '../../../assets/bag.svg';
+import user from '../../../assets/user.svg';
 
 const UserNavigation = () => {
     const navigate = useNavigate();

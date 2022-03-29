@@ -1,0 +1,10 @@
+.categorybar {
+    grid-area: 1 / 1 / 2 / 2;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.categorybar hr {
+    margin: 20px 0 5px 0;
+}
