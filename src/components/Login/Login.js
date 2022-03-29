@@ -1,6 +1,5 @@
 import {useDispatch, useSelector} from "react-redux";
 import {validActions} from "../../store/valid-slice";
-import {fetchShopData} from "../../store/fetch-slice";
 import {authActions} from "../../store/auth-slice";
 import {useNavigate} from "react-router-dom";
 import Button from "../UI/Button";
@@ -34,7 +33,6 @@ const Login = () => {
     const buttonLogin = (event) => {
         event.preventDefault();
         if (passwordIsValid && emailIsValid) {
-            dispatch(fetchShopData());
             dispatch(authActions.onLogin());
             navigate('/main');
             dispatch(validActions.setInputIsTouchedFalse());

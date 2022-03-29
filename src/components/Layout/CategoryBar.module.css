@@ -1,6 +1,17 @@
 .categorybar {
     grid-area: 1 / 1 / 2 / 2;
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.categorybar button {
+    background: transparent;
+    border: none;
+}
+.categorybar button:hover {
+    color: #00baff;
+    cursor: pointer;
 }
 
 .categorybar h3 {
@@ -14,5 +25,5 @@
 }
 
 .categorybar hr {
-    margin: 20px 0;
+    margin: 20px 0 5px 0;
 }

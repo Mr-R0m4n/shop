@@ -7,6 +7,15 @@
     align-content: center;
 }
 
+.saleCard {
+    border-radius: 25px;
+    padding: 0 25px;
+    border: solid 5px #00baff;
+    display: grid;
+    grid-template-rows: 70% 20% 10%;
+    align-content: center;
+}
+
 .image {
     max-height: 80%;
     max-width: 100%;
@@ -42,4 +51,17 @@
     font-size: 1.5rem;
     font-weight: bold;
     justify-self: right;
+}
+
+.salePrice {
+    font-size: 1.55rem;
+    font-weight: bold;
+    justify-self: right;
+    color: #00baff;
+}
+
+.sale {
+    font-size: 1.7rem;
+    color: #00baff;
+    font-weight: bold;
 }

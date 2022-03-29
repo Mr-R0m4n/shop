@@ -9,7 +9,7 @@ const CategoryBar = () => {
     const sortedProductCategoryList = sortedProductCategorys.map(category => {
         return (
             <li key={category}>
-                <p>{category}</p>
+                <button>{category}</button>
             </li>
         );
     });
@@ -22,35 +22,26 @@ const CategoryBar = () => {
             </ul>
             <hr/>
             <h3>Rating</h3>
-            <button>
-                <span>4 & Up</span>
-            </button>
-            <a>
-                <p>3 & Up</p>
-            </a>
-            <a>
-                <p>2 & Up</p>
-            </a>
-            <a>
-                <p>1 & Up</p>
-            </a>
+            <ul>
+                <li><button type='button'>4 & Up</button></li>
+                <li><button type='button'>3 & Up</button></li>
+                <li><button type='button'>2 & Up</button></li>
+                <li><button type='button'>1 & Up</button></li>
+            </ul>
             <hr/>
             <h3>Price</h3>
-            <a>
-                <p>0 - 20 EUR</p>
-            </a>
-            <a>
-                <p>20 - 50 EUR</p>
-            </a>
-            <a>
-                <p>50 - 100 EUR</p>
-            </a>
-            <a>
-                <p>100 - 200 EUR</p>
-            </a>
-            <a>
-                <p>200 EUR & more</p>
-            </a>
+            <ul>
+                <li><button type='button'>0 - 20 EUR</button></li>
+                <li><button type='button'>20 - 50 EUR</button></li>
+                <li><button type='button'>50 - 100 EUR</button></li>
+                <li><button type='button'>100 - 200 EUR</button></li>
+                <li><button type='button'>200 EUR & more</button></li>
+            </ul>
+            <hr/>
+            <h3>Sale</h3>
+            <ul>
+                <li><button type='button'>on Sale</button></li>
+            </ul>
             <hr/>
         </aside>
     );
