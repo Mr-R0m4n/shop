@@ -5,7 +5,6 @@ import css from './Products.module.css';
 
 const Products = () => {
     const apiData = useSelector(state => state.data.filteredProducts);
-
     const products = apiData.map(product => {
         const saleProduct = Math.floor(Math.random() * 20) + 1;
         if (product.id !== saleProduct) {

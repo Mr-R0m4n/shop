@@ -47,6 +47,7 @@ export const fetchShopData = () => async dispatch => {
     try {
         axios.get('https://fakestoreapi.com/products')
             .then((response) => dispatch(dataSuccess(response.data)));
+        console.log('fetched')
     } catch (e) {
         dispatch(hasError);
     }

@@ -1,5 +1,5 @@
 import {useDispatch, useSelector} from "react-redux";
-import {Fragment} from "react";
+import {Fragment, useEffect} from "react";
 
 import css from './CategoryFilter.module.css';
 import {dataActions} from "../../../store/data-slice";
@@ -8,8 +8,11 @@ const CategoryFilter = () => {
     const apiData = useSelector(state => state.data.data);
     const sortedProductCategories = [...new Set(apiData.map(product => product.category))].sort();
 
-    const dispatch = useDispatch();
+    useEffect(() => {
+        dispatch(dataActions.categoryFilter('allCategories'))
+    },[])
 
+    const dispatch = useDispatch();
     const onChangeHandler = (event) => {
         dispatch(dataActions.categoryFilter(event.target.value))
     }
@@ -28,7 +31,7 @@ const CategoryFilter = () => {
             <h3>Categories</h3>
             <div onChange={onChangeHandler} className={css.container}>
                 {sortedProductCategoryList}
-                <input id={'allCategories'} type="radio" value={'allCategories'} name={'category'} defaultChecked/>
+                <input id={'allCategories'} type="radio" value={'allCategories'} name={'category'}/>
                 <label htmlFor="allCategories">All</label>
             </div>
         </div>
