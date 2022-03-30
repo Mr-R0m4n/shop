@@ -10,8 +10,13 @@
 .container input[type="radio"] {
     display:none;
 }
+
 .container input[type="radio"]:checked + label {
     color: #00baff;
+}
+
+.container label:hover {
+    cursor: pointer;
 }
 
 .star {

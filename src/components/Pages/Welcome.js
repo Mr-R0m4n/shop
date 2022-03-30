@@ -1,5 +1,5 @@
 import {Fragment, useEffect} from "react";
-import {fetchShopData} from "../../store/fetch-slice";
+import {fetchShopData} from "../../store/data-slice";
 import {useDispatch} from "react-redux";
 import Header from "../Layout/Header/Header";
 import Login from "../Login/Login";

@@ -1,13 +1,13 @@
 import {configureStore} from '@reduxjs/toolkit';
 import authReducer from "./auth-slice";
-import fetchReducer from './fetch-slice';
+import dataReducer from './data-slice';
 import validReducer from './valid-slice';
 
 const store = configureStore({
     reducer: {
         auth: authReducer,
-        fetch: fetchReducer,
-        valid: validReducer
+        data: dataReducer,
+        valid: validReducer,
     }
 });
 

@@ -4,15 +4,15 @@ import Button from "../../UI/Button";
 import {useSelector} from "react-redux";
 
 const ProductNavigation = () => {
-    const apiData = useSelector(state => state.fetch.data);
-    const sortedProductCategorys = [...new Set(apiData.map(product => product.category))].sort();
+    const apiData = useSelector(state => state.data.data);
+    const sortedProductCategories = [...new Set(apiData.map(product => product.category))].sort();
 
-    const sortedProductCategoryList = sortedProductCategorys.map(category => {
+    const sortedProductCategoryList = sortedProductCategories.map(category => {
         return (
             <option key={`${category}`} value={`${category}`}>{category.charAt(0).toUpperCase() + category.slice(1)}</option>
         );
     });
-    
+
     const buttonSearchHandler = (event) => {
         event.preventDefault();
     };
