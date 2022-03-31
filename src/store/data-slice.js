@@ -1,16 +1,22 @@
 import {createSlice} from "@reduxjs/toolkit";
 import axios from "axios";
+import dummyData from '../DUMMY_DATA.json';
 
 const dataSlice = createSlice({
     name: 'fetchApiData',
     initialState: {
         data: JSON.parse(sessionStorage.getItem('products')),
-        categories: JSON.parse(sessionStorage.getItem('products')),
+        filteredProducts: JSON.parse(sessionStorage.getItem('products')),
         isLoading: false,
         error: false,
-        filteredProducts: JSON.parse(sessionStorage.getItem('products'))
     },
     reducers: {
+        prepareData(state) {
+            const data = dummyData.map(product => {return {...product, sale: Math.random() < 0.1}})
+            state.data = data
+            state.filteredProducts = data
+            sessionStorage.setItem('products', JSON.stringify(data));
+        },
         loading(state) {
             state.isLoading = true;
         },
@@ -24,10 +30,10 @@ const dataSlice = createSlice({
             state.isLoading = false;
         },
         categoryFilter(state, action) {
-            if(action.payload !== 'allCategories')
-                state.filteredProducts = state.data.filter(product => product.category === action.payload)
+            if (action.payload !== 'allCategories')
+                state.filteredProducts = state.data.filter(product => product.category === action.payload);
             else
-                state.filteredProducts = state.data
+                state.filteredProducts = state.data;
         },
         ratingFilter() {
 
@@ -47,7 +53,7 @@ export const fetchShopData = () => async dispatch => {
     try {
         axios.get('https://fakestoreapi.com/products')
             .then((response) => dispatch(dataSuccess(response.data)));
-        console.log('fetched')
+        console.log('fetched');
     } catch (e) {
         dispatch(hasError);
     }

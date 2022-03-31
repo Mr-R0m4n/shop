@@ -1,5 +1,5 @@
 import {Fragment, useEffect} from "react";
-import {fetchShopData} from "../../store/data-slice";
+import {dataActions, fetchShopData} from "../../store/data-slice";
 import {useDispatch} from "react-redux";
 import Header from "../Layout/Header/Header";
 import Login from "../Login/Login";
@@ -11,7 +11,7 @@ const Welcome = () => {
     const dispatch = useDispatch()
 
     useEffect(()=> {
-        dispatch(fetchShopData());
+        dispatch(dataActions.prepareData());
     },[])
 
     return (
