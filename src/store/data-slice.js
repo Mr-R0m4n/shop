@@ -6,9 +6,13 @@ const dataSlice = createSlice({
     name: 'fetchApiData',
     initialState: {
         data: JSON.parse(sessionStorage.getItem('products')),
-        filteredProducts: JSON.parse(sessionStorage.getItem('products')),
+        filteredProducts: JSON.parse(sessionStorage.getItem('filtered')),
         isLoading: false,
         error: false,
+        categoryFilter: '',
+        ratingFilter: 0,
+        priceFilter: [0,100000],
+        saleFilter: 'false'
     },
     reducers: {
         prepareData(state) {
@@ -16,6 +20,7 @@ const dataSlice = createSlice({
             state.data = data
             state.filteredProducts = data
             sessionStorage.setItem('products', JSON.stringify(data));
+            sessionStorage.setItem('filtered', JSON.stringify(data));
         },
         loading(state) {
             state.isLoading = true;
@@ -29,22 +34,38 @@ const dataSlice = createSlice({
             state.data = data
             state.filteredProducts = data
             sessionStorage.setItem('products', JSON.stringify(data));
+            sessionStorage.setItem('filtered', JSON.stringify(data));
             state.isLoading = false;
         },
-        categoryFilter(state, action) {
-            if (action.payload !== 'allCategories')
-                state.filteredProducts = state.data.filter(product => product.category === action.payload);
+        filter(state) {
+            if(state.saleFilter === 'false')
+                state.filteredProducts = state.data.filter(product =>
+                    product.category.includes(state.categoryFilter) &&
+                    product.rating.rate > state.ratingFilter &&
+                    product.price >= +state.priceFilter[0] && product.price <= +state.priceFilter[1]);
             else
-                state.filteredProducts = state.data;
+                state.filteredProducts = state.data.filter(product =>
+                    product.category.includes(state.categoryFilter) &&
+                    product.rating.rate > state.ratingFilter &&
+                    product.price >= +state.priceFilter[0] && product.price <= +state.priceFilter[1] &&
+                    String(product.sale) === state.saleFilter);
         },
-        ratingFilter() {
-
+        categoryFilter(state, action) {
+            state.categoryFilter = action.payload
         },
-        priceFilter() {
-
+        ratingFilter(state, action) {
+            state.ratingFilter = action.payload
         },
-        saleFilter() {
-
+        priceFilter(state, action) {
+            if (action.payload !== 'allPrices'){
+                const [low, high] = action.payload.split(',')
+                state.priceFilter = [low, high]
+            }else {
+                state.priceFilter = 'allPrices'
+            }
+        },
+        saleFilter(state, action) {
+            state.saleFilter = action.payload
         },
     }
 });

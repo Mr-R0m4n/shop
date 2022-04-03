@@ -9,12 +9,13 @@ const CategoryFilter = () => {
     const sortedProductCategories = [...new Set(apiData.map(product => product.category))].sort();
 
     useEffect(() => {
-        dispatch(dataActions.categoryFilter('allCategories'))
+        dispatch(dataActions.categoryFilter(''))
     },[])
 
     const dispatch = useDispatch();
     const onChangeHandler = (event) => {
         dispatch(dataActions.categoryFilter(event.target.value))
+        dispatch(dataActions.filter())
     }
 
     const sortedProductCategoryList = sortedProductCategories.map(category => {
@@ -31,7 +32,7 @@ const CategoryFilter = () => {
             <h3>Categories</h3>
             <div onChange={onChangeHandler} className={css.container}>
                 {sortedProductCategoryList}
-                <input id={'allCategories'} type="radio" value={'allCategories'} name={'category'} defaultChecked/>
+                <input id={'allCategories'} type="radio" value={''} name={'category'} defaultChecked/>
                 <label htmlFor="allCategories">All</label>
             </div>
         </div>
