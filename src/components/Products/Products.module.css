@@ -6,10 +6,31 @@
     display: grid;
     justify-content: center;
     grid-template-columns: 20% 20% 20% 20%;
+    grid-auto-rows: 600px;
     gap: 20px;
     padding: 20px 0;
 }
 
 .products::-webkit-scrollbar {
     display: none;
+}
+
+@media (max-width: 1024px) {
+    .products {
+        grid-template-columns: 25% 25% 25%;
+        grid-auto-rows: 350px;
+    }
+}
+
+@media (max-width: 768px) {
+    .products {
+        grid-template-columns: 40% 40%;
+    }
+}
+
+@media (max-width: 420px) {
+    .products {
+        grid-template-columns: 100%;
+        grid-auto-rows: 300px;
+    }
 }

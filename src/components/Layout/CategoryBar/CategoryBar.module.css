@@ -8,3 +8,15 @@
 .categorybar hr {
     margin: 20px 0 5px 0;
 }
+
+@media (max-width: 1024px) {
+    .categorybar {
+        font-size: 0.7rem;
+    }
+}
+
+@media (max-width: 1024px) {
+    .categorybar {
+        font-size: 0.5rem;
+    }
+}

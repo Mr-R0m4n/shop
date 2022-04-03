@@ -74,7 +74,7 @@
 }
 
 .tooltip:hover .tooltiptext,
-.tooltip:focus .tooltiptext {
+.tooltip input:focus + .tooltiptext {
     visibility: visible;
     opacity: 1;
 }

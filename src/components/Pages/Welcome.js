@@ -12,6 +12,7 @@ const Welcome = () => {
 
     useEffect(()=> {
         dispatch(dataActions.prepareData());
+        // dispatch(fetchShopData());
     },[])
 
     return (

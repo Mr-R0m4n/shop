@@ -65,3 +65,47 @@
     color: #00baff;
     font-weight: bold;
 }
+
+@media (max-width: 1024px) {
+    .card {
+        padding: 0 20px;
+        grid-template-rows: 50% 30% 10%;
+    }
+
+    .saleCard {
+        padding: 0 20px;
+        grid-template-rows: 50% 30% 10%;
+    }
+
+    .image {
+        max-height: 60%;
+    }
+
+    .title {
+        font-size: 0.7rem;
+    }
+
+    .rate {
+        font-size: 0.7rem;
+    }
+
+    .count {
+        font-size: 0.5rem;
+    }
+
+    .star {
+        height: 0.7rem;
+    }
+
+    .price {
+        font-size: 0.8rem;
+    }
+
+    .salePrice {
+        font-size: 0.85rem;
+    }
+
+    .sale {
+        font-size: 1rem;
+    }
+}

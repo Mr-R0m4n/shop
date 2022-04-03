@@ -25,8 +25,10 @@ const dataSlice = createSlice({
             state.isLoading = false;
         },
         dataSuccess(state, action) {
-            state.data = action.payload;
-            sessionStorage.setItem('products', JSON.stringify(action.payload));
+            const data = action.payload.map(product => {return {...product, sale: Math.random() < 0.1}})
+            state.data = data
+            state.filteredProducts = data
+            sessionStorage.setItem('products', JSON.stringify(data));
             state.isLoading = false;
         },
         categoryFilter(state, action) {
@@ -53,7 +55,6 @@ export const fetchShopData = () => async dispatch => {
     try {
         axios.get('https://fakestoreapi.com/products')
             .then((response) => dispatch(dataSuccess(response.data)));
-        console.log('fetched');
     } catch (e) {
         dispatch(hasError);
     }

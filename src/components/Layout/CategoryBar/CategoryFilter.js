@@ -31,7 +31,7 @@ const CategoryFilter = () => {
             <h3>Categories</h3>
             <div onChange={onChangeHandler} className={css.container}>
                 {sortedProductCategoryList}
-                <input id={'allCategories'} type="radio" value={'allCategories'} name={'category'}/>
+                <input id={'allCategories'} type="radio" value={'allCategories'} name={'category'} defaultChecked/>
                 <label htmlFor="allCategories">All</label>
             </div>
         </div>
