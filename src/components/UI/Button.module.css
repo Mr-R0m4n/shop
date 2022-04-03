@@ -17,3 +17,10 @@
 .button:focus {
   outline: none;
 }
+
+@media (max-width: 1024px) {
+  .button {
+    padding: 0.2rem 0.5rem;
+    font-size: 0.7rem;
+  }
+}

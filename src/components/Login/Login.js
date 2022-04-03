@@ -92,7 +92,7 @@ const Login = () => {
                     </span>
                 </span>
             </span>
-            <Button onClick={buttonLogin} type={'submit'}>Login</Button>
+            <button onClick={buttonLogin} type={'submit'}>Login</button>
         </form>
     );
 };

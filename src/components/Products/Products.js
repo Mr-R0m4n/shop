@@ -14,7 +14,7 @@ const Products = () => {
                 title={product.title}
                 rate={product.rating.rate}
                 count={product.rating.count}
-                price={product.price}
+                price={product.price*0.8}
                 sale={product.sale}
             />
         )

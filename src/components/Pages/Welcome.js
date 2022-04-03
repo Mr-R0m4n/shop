@@ -11,8 +11,8 @@ const Welcome = () => {
     const dispatch = useDispatch()
 
     useEffect(()=> {
-        dispatch(dataActions.prepareData());
-        // dispatch(fetchShopData());
+        // dispatch(dataActions.prepareData());
+        dispatch(fetchShopData());
     },[])
 
     return (

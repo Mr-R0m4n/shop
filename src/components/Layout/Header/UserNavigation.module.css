@@ -13,3 +13,23 @@
 .icon {
     height: 32px;
 }
+
+@media (max-width: 1024px) {
+    .userNavigation {
+        gap: 0.5rem;
+    }
+
+    .userNavigation button {
+        height: 20px;
+    }
+
+    .icon {
+        height: 15px;
+    }
+}
+
+@media (max-width: 420px) {
+    .userNavigation {
+        gap: 0.25rem;
+    }
+}

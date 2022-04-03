@@ -17,7 +17,7 @@
     width: 100%;
 }
 
-.login input:last-of-type {
+.tooltip input {
     margin-bottom: 2rem;
 }
 
@@ -77,4 +77,53 @@
 .tooltip input:focus + .tooltiptext {
     visibility: visible;
     opacity: 1;
+}
+
+.login button {
+    border: none;
+    background: #00baff;
+    color: white;
+    padding: 0.3rem 0.75rem;
+    cursor: pointer;
+    border-radius: 6px;
+    font-size: 1.1rem;
+}
+
+.login button:hover,
+.login button:active {
+    background: #66D9FF;
+    border-color: #66D9FF;
+}
+
+.login button:focus {
+    outline: none;
+}
+
+@media (max-width: 420px) {
+    .tooltip .tooltiptext {
+        visibility: hidden;
+        width: 200px;
+        background-color: #555;
+        color: #fff;
+        text-align: left;
+        border-radius: 6px;
+        padding: 5px;
+        position: absolute;
+        z-index: 1;
+        top: 70%;
+        margin-left: -320px;
+        opacity: 0;
+        transition: opacity 0.3s;
+    }
+
+    .tooltip .tooltiptext::after {
+        content: "";
+        position: absolute;
+        top: -5px;
+        left: 50%;
+        margin-left: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: transparent transparent #555 transparent;
+    }
 }
