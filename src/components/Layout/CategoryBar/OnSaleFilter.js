@@ -5,7 +5,7 @@ import {useDispatch} from "react-redux";
 
 const OnSaleFilter = () => {
     useEffect(() => {
-        dispatch(dataActions.saleFilter(false))
+        dispatch(dataActions.saleFilter('false'))
     },[])
 
     const dispatch = useDispatch();
