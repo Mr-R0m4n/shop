@@ -77,6 +77,22 @@
 
 @media (max-width: 420px) {
     .search {
-        grid-area: 2 / 1 / 2 / 4;
+        grid-area: 1 / 1 / 2 / 3;
+        justify-content: left;
+    }
+
+    .search select {
+        display: none;
+    }
+
+    .search input {
+        height: 30px;
+        border-top-left-radius: 6px;
+        border-bottom-left-radius: 6px;
+        width: 70%;
+    }
+
+    .search button {
+        height: 30px;
     }
 }

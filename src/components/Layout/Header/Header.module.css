@@ -46,6 +46,7 @@
 
 @media (max-width: 786px) {
     .header {
+        height: 50px;
         grid-template-columns: 20% 55% 25%;
         padding: 0 1rem;
     }
@@ -53,9 +54,9 @@
 
 @media (max-width: 420px) {
     .header {
-        grid-template-rows: 1fr 1fr;
-        height: 50px;
-        grid-template-columns: 25% 45% 30%;
-        padding: 0 0.5rem;
+        padding:  0 .5rem;
     }
+    /*.logo {*/
+    /*    display: none;*/
+    /*}*/
 }

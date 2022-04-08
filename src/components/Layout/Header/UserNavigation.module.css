@@ -30,6 +30,10 @@
 
 @media (max-width: 420px) {
     .userNavigation {
-        gap: 0.25rem;
+        gap: .25rem;
+    }
+
+    .userNavigation button {
+        height: 30px;
     }
 }

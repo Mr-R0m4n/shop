@@ -8,7 +8,7 @@ import css from './Welcome.module.css';
 import humming from '../../assets/humming-blue.svg';
 
 const Welcome = () => {
-    const dispatch = useDispatch()
+    const dispatch = useDispatch();
 
     useEffect(()=> {
         dispatch(dataActions.prepareData());
