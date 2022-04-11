@@ -6,6 +6,7 @@ import {useDispatch} from "react-redux";
 const PriceFilter = () => {
     useEffect(() => {
         dispatch(dataActions.priceFilter('0,1000000'))
+        dispatch(dataActions.filter())
     },[])
 
     const dispatch = useDispatch();

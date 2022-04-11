@@ -10,6 +10,7 @@ const Products = () => {
         return (
             <Card
                 key={product.id}
+                id={product.id}
                 image={product.image}
                 title={product.title}
                 rate={product.rating.rate}

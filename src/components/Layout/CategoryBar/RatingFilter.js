@@ -7,6 +7,7 @@ import {useDispatch} from "react-redux";
 const RatingFilter = () => {
     useEffect(() => {
         dispatch(dataActions.ratingFilter(0))
+        dispatch(dataActions.filter())
     },[])
 
     const dispatch = useDispatch();

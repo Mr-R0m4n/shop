@@ -15,7 +15,7 @@ function App() {
             <Route path={'/'} element={isAuthenticated ? <Main/> : <Welcome/>}/>
             <Route path={'/main'} element={isAuthenticated ? <Main/> : <Welcome/>}/>
             <Route path={'/user'} element={isAuthenticated ? <User/> : <Welcome/>}/>
-            <Route path={'/product'} element={isAuthenticated ? <Detail/> : <Welcome/>}/>
+            <Route path={'/product/:productId'} element={isAuthenticated ? <Detail/> : <Welcome/>}/>
             <Route path={'/cart'} element={isAuthenticated ? <Cart/> : <Welcome/>}/>
         </Routes>
     );

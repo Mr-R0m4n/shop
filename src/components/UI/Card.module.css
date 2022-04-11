@@ -1,19 +1,18 @@
-.card {
+.card,
+.saleCard {
     border-radius: 25px;
     padding: 0 25px;
     border: solid 2px #ddd;
     display: grid;
     grid-template-rows: 70% 20% 10%;
-    align-content: center;
 }
 
-.saleCard {
-    border-radius: 25px;
-    padding: 0 25px;
-    border: solid 5px #00baff;
-    display: grid;
-    grid-template-rows: 70% 20% 10%;
-    align-content: center;
+.card > a,
+.saleCard> a {
+    justify-self: center;
+    display: flex;
+    text-decoration: none;
+    color: #000;
 }
 
 .image {
@@ -67,12 +66,8 @@
 }
 
 @media (max-width: 1024px) {
-    .card {
-        padding: 0 20px;
-        grid-template-rows: 70% 20% 10%;
-    }
-
-    .saleCard {
+    .card,
+    .saleCard{
         padding: 0 20px;
         grid-template-rows: 70% 20% 10%;
     }
@@ -111,12 +106,8 @@
 }
 
 @media (max-width: 420px) {
-    .card {
-        padding: 0 20px;
-        grid-template-rows: 50% 30% 20%;
-    }
-
-    .saleCard {
+    .card,
+    .saleCard{
         padding: 0 20px;
         grid-template-rows: 50% 30% 20%;
     }

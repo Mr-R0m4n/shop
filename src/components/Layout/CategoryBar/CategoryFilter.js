@@ -10,6 +10,7 @@ const CategoryFilter = () => {
 
     useEffect(() => {
         dispatch(dataActions.categoryFilter(''))
+        dispatch(dataActions.filter())
     },[])
 
     const dispatch = useDispatch();
