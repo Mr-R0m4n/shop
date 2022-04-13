@@ -1,8 +1,8 @@
 import {useDispatch, useSelector} from "react-redux";
 import {Fragment, useEffect} from "react";
+import {dataActions} from "../../../store/data-slice";
 
 import css from './CategoryFilter.module.css';
-import {dataActions} from "../../../store/data-slice";
 
 const CategoryFilter = () => {
     const apiData = useSelector(state => state.data.data);

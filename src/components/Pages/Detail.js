@@ -9,13 +9,13 @@ import css from "./Detail.module.css";
 const Detail = () => {
     const params = useParams()
 
-    console.log(params)
-
     return (
         <Fragment>
             <Header/>
             <main className={css.container}>
-                <ProductDetail/>
+                <ProductDetail
+                    productId = {params}
+                />
                 <CartBar/>
             </main>
         </Fragment>

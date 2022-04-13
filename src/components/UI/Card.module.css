@@ -7,6 +7,10 @@
     grid-template-rows: 70% 20% 10%;
 }
 
+.saleCard {
+    border: solid 5px #00baff;
+}
+
 .card > a,
 .saleCard> a {
     justify-self: center;
