@@ -1,5 +1,8 @@
-import css from './ProductDetail.module.css'
 import {useSelector} from "react-redux";
+import star from "../../assets/star-filled.svg";
+
+import css from './ProductDetail.module.css'
+import Button from "../UI/Button";
 
 const ProductDetail = (props) => {
     const apiData = useSelector(state => state.data.data);
@@ -7,12 +10,16 @@ const ProductDetail = (props) => {
 
     return (
         <section className={css.product}>
-            <h1>{product.title}</h1>
-            <img src={product.image} alt={product.title}/>
-            <p>{product.description}</p>
-            <h3>{product.rating.rate}</h3>
-            <h3>{product.rating.count}</h3>
-            <h3>{product.price.toFixed(2)}€</h3>
+            <h1 className={css.title}>{product.title}</h1>
+            <img className={css.image} src={product.image} alt={product.title}/>
+            <p className={css.description}>{product.description}</p>
+            <h1 className={css.price}>{product.price.toFixed(2)}€</h1>
+            <div>
+                <img className={css.star} src={star} alt={'ratingStar'}/>
+                <span className={css.rate}>{product.rating.rate}</span>
+                <span className={css.count}> ({product.rating.count})</span>
+            </div>
+            <Button type={'button'}>Add to Cart</Button>
         </section>
     );
 };
