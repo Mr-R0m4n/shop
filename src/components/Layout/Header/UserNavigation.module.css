@@ -30,6 +30,6 @@
 
 @media (max-width: 420px) {
     .userNavigation {
-        gap: .25rem;
+        display: none;
     }
 }

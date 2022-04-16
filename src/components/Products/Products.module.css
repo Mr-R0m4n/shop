@@ -32,5 +32,6 @@
     .products {
         grid-template-columns: 100%;
         grid-auto-rows: 300px;
+        padding-bottom: 70px;
     }
 }

@@ -54,7 +54,7 @@
 
 @media (max-width: 420px) {
     .search {
-        grid-area: 1 / 1 / 2 / 3;
+        grid-area: 1 / 1 / 2 / 4;
         justify-content: left;
     }
 
@@ -62,7 +62,7 @@
         height: 30px;
         border-top-left-radius: 6px;
         border-bottom-left-radius: 6px;
-        width: 70%;
+        width: 100%;
     }
 
     .search button {

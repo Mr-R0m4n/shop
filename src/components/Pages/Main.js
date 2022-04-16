@@ -5,6 +5,7 @@ import Products from "../Products/Products";
 import CartBar from "../Layout/CartBar";
 
 import css from './Main.module.css'
+import Footer from "../Layout/Footer/Footer";
 
 const Main = () => {
 
@@ -16,6 +17,7 @@ const Main = () => {
                 <Products/>
                 <CartBar/>
             </main>
+            <Footer/>
         </Fragment>
     );
 };

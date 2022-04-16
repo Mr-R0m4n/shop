@@ -5,6 +5,7 @@ import ProductDetail from "../Products/ProductDetail";
 import CartBar from "../Layout/CartBar";
 
 import css from "./Detail.module.css";
+import Footer from "../Layout/Footer/Footer";
 
 const Detail = () => {
     const params = useParams()
@@ -18,6 +19,7 @@ const Detail = () => {
                 />
                 <CartBar/>
             </main>
+            <Footer/>
         </Fragment>
     );
 };
