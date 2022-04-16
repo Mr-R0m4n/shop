@@ -6,7 +6,7 @@
 }
 
 section {
-    grid-area: 1 / 1 / 2 / 3;
+    grid-area: 1 / 2 / 2 / 3;
 }
 
 @media (max-width: 1024px) {
@@ -17,6 +17,6 @@ section {
 
 @media (max-width: 420px) {
     .container {
-        grid-template-columns: 10% 65% 25%;
+        grid-template-columns: 5% 70% 25%;
     }
 }

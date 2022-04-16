@@ -1,24 +1,16 @@
 .product {
-    grid-area: 1 / 2 / 2 / 3;
     text-align: center;
-}
-
-.image {
-    max-height: 30%;
-    max-width: 50%;
-    margin: 20px 0;
+    align-self: stretch;
 }
 
 .title {
-    margin: 20px 0;
+    margin: 20px 0 30px 0;
 }
 
-.description {
-    margin: 20px 0;
-}
-
-.price {
-    margin: 20px 0;
+.image {
+    /*max-height: 100%;*/
+    /*max-width: 50%;*/
+    margin-bottom: 20px;
 }
 
 .rate {
@@ -36,6 +28,46 @@
     margin-right: 3px;
 }
 
+.description {
+    margin: 20px auto;
+    width: 20%;
+}
+
+.price {
+    margin-top: 30px;
+}
+
 .product button {
-    margin: 20px 0;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+@media (max-width: 1920px) {
+    .image {
+        max-height: 40%;
+    }
+
+    .product {
+        align-self: inherit;
+    }
+
+    .description {
+        width: 30%;
+    }
+}
+
+@media (max-width: 1024px) {
+    .image {
+        max-width: 50%;
+    }
+
+    .description {
+        width: 80%;
+    }
+}
+
+@media (max-width: 1024px) {
+    .description {
+        width: 100%;
+    }
 }
