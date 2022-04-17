@@ -6,6 +6,7 @@ import Button from "../../UI/Button";
 import css from './UserNavigation.module.css';
 import bag from '../../../assets/bag.svg';
 import user from '../../../assets/user.svg';
+import heart from "../../../assets/heart.svg";
 
 const UserNavigation = () => {
     const navigate = useNavigate();
@@ -13,6 +14,10 @@ const UserNavigation = () => {
 
     const buttonCartLink = () => {
         navigate('/cart');
+    };
+
+    const buttonFavLink = () => {
+        navigate('/fav');
     };
 
     const buttonUserLink = () => {
@@ -28,6 +33,9 @@ const UserNavigation = () => {
         <div className={css.userNavigation}>
             <Button onClick={buttonCartLink} type={'button'}>
                 <img className={css.icon} src={bag} alt={'shopping bag'}/>
+            </Button>
+            <Button onClick={buttonFavLink} type={'button'}>
+                <img className={css.icon} src={heart} alt={'shopping bag'}/>
             </Button>
             <Button onClick={buttonUserLink} type={'button'}>
                 <img className={css.icon} src={user} alt={'user icon'}/>

@@ -1,18 +1,7 @@
 .container {
     display: grid;
     grid-template-columns: 10% 80% 10%;
-    gap: 0;
     height: calc(100vh - 80px);
-}
-
-section {
-    grid-area: 1 / 2 / 2 / 3;
-}
-
-@media (max-width: 1024px) {
-    .container {
-        height: calc(100vh - 50px);
-    }
 }
 
 @media (max-width: 420px) {

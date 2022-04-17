@@ -14,9 +14,7 @@ const Detail = () => {
         <Fragment>
             <Header/>
             <main className={css.container}>
-                <ProductDetail
-                    productId = {params}
-                />
+                <ProductDetail productId = {params}/>
                 <CartBar/>
             </main>
             <Footer/>

@@ -19,7 +19,7 @@ const ProductDetail = (props) => {
             </div>
 
             <p className={css.description}>{product.description}</p>
-            <h1 className={css.price}>{product.price.toFixed(2)}€</h1>
+            <h1 className={`${product.sale ? css.salePrice : css.price}`}>{product.price.toFixed(2)}€</h1>
             <Button type={'button'}>Add to Cart</Button>
         </section>
     );

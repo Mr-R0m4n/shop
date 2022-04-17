@@ -2,12 +2,12 @@ import {useDispatch} from "react-redux";
 import {useNavigate} from "react-router-dom";
 import Button from "../../UI/Button";
 import {authActions} from "../../../store/auth-slice";
+
+import css from './Footer.module.css';
 import bag from "../../../assets/bag.svg";
 import user from "../../../assets/user.svg";
 import home from "../../../assets/home.svg";
 import heart from "../../../assets/heart.svg";
-
-import css from './Footer.module.css';
 
 const Footer = () => {
 

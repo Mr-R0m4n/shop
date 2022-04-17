@@ -4,6 +4,7 @@ import Main from "./components/Pages/Main";
 import User from "./components/Pages/User";
 import Detail from "./components/Pages/Detail";
 import Cart from "./components/Pages/Cart";
+import Favorites from "./components/Pages/Favorites";
 import {useSelector} from "react-redux";
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
             <Route path={'/'} element={isAuthenticated ? <Main/> : <Welcome/>}/>
             <Route path={'/main'} element={isAuthenticated ? <Main/> : <Welcome/>}/>
             <Route path={'/user'} element={isAuthenticated ? <User/> : <Welcome/>}/>
+            <Route path={'/fav'} element={isAuthenticated ? <Favorites/> : <Welcome/>}/>
             <Route path={'/product/:productId'} element={isAuthenticated ? <Detail/> : <Welcome/>}/>
             <Route path={'/cart'} element={isAuthenticated ? <Cart/> : <Welcome/>}/>
         </Routes>
