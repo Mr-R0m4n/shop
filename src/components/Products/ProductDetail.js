@@ -1,12 +1,23 @@
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import star from "../../assets/star-filled.svg";
 
 import css from './ProductDetail.module.css'
 import Button from "../UI/Button";
+import {cartActions} from "../../store/cart-slice";
 
 const ProductDetail = (props) => {
     const apiData = useSelector(state => state.data.data);
     const product = apiData.find(product => product.id === +props.productId.productId)
+    const dispatch = useDispatch();
+
+    const addToCartHandler = () => {
+        dispatch(cartActions.addItemToCart({id: product.id, price: product.price, title: product.title, image: product.image}))
+    }
+
+    let options = [];
+    for (let i = 1; i <= 20; i++){
+        options.push(<option key={i} value={i}>{i}</option> )
+    }
 
     return (
         <section className={css.product}>
@@ -20,7 +31,7 @@ const ProductDetail = (props) => {
 
             <p className={css.description}>{product.description}</p>
             <h1 className={`${product.sale ? css.salePrice : css.price}`}>{product.price.toFixed(2)}€</h1>
-            <Button type={'button'}>Add to Cart</Button>
+            <Button onClick={addToCartHandler} type={'button'}>Add to Cart</Button>
         </section>
     );
 };
