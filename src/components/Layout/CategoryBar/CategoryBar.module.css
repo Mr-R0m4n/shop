@@ -12,17 +12,12 @@
 @media (max-width: 1024px) {
     .categorybar {
         font-size: 0.7rem;
+        padding: 20px 10px;
     }
 }
 
 @media (max-width: 768px) {
     .categorybar {
         font-size: 0.5rem;
-    }
-}
-
-@media (max-width: 420px) {
-    .categorybar {
-        padding: 20px 10px;
     }
 }

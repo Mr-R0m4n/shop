@@ -55,6 +55,14 @@
     margin-top: 20px;
 }
 
+.product select {
+    height: 40px;
+    border-radius: 6px;
+    margin-right: 1rem;
+    font-size: 1rem;
+    border: #00baff 2px solid;
+}
+
 @media (max-width: 1920px) {
     .product {
         align-self: inherit;
@@ -87,5 +95,10 @@
 
     .description {
         width: 100%;
+    }
+
+    .product select {
+        height: 31px;
+        font-size: 0.7rem;
     }
 }

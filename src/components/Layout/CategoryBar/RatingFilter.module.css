@@ -19,6 +19,10 @@
     cursor: pointer;
 }
 
+.container label {
+    margin-bottom: 10px;
+}
+
 .star {
     height: 1rem;
     margin-right: 3px;

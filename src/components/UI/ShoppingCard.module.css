@@ -1,0 +1,40 @@
+.card,
+.saleCard{
+    padding: 1rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    border-radius: 14px;
+    background-color: white;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.saleCard {
+    border: none;
+    box-shadow: inset rgba(0, 186, 255, 1) 0 0 3px 0, inset rgba(0, 186, 255, 1) 0 0 10px 0;
+}
+
+.saleCard p,
+.saleCard b {
+    color: #00baff;
+}
+
+.card span:first-of-type,
+.saleCard span:first-of-type{
+    margin-right: 5px;
+}
+
+@media (max-width: 1920px) {
+    .card,
+    .saleCard {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 1024px){
+    .card strong,
+    .saleCard strong {
+        display: none;
+    }
+}

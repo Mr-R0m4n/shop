@@ -18,3 +18,7 @@
 .container label:hover {
     cursor: pointer;
 }
+
+.container label {
+    margin-bottom: 10px;
+}

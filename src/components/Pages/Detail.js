@@ -3,9 +3,9 @@ import {useParams} from "react-router-dom";
 import Header from "../Layout/Header/Header";
 import ProductDetail from "../Products/ProductDetail";
 import CartBar from "../Layout/CartBar";
+import Footer from "../Layout/Footer/Footer";
 
 import css from "./Detail.module.css";
-import Footer from "../Layout/Footer/Footer";
 
 const Detail = () => {
     const params = useParams()

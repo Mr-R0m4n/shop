@@ -1,17 +1,19 @@
 import {useDispatch, useSelector} from "react-redux";
-import star from "../../assets/star-filled.svg";
+import {cartActions} from "../../store/cart-slice";
+import Button from "../UI/Button";
 
 import css from './ProductDetail.module.css'
-import Button from "../UI/Button";
-import {cartActions} from "../../store/cart-slice";
+import star from "../../assets/star-filled.svg";
+import {useRef} from "react";
 
 const ProductDetail = (props) => {
+    const selectRef = useRef();
     const apiData = useSelector(state => state.data.data);
     const product = apiData.find(product => product.id === +props.productId.productId)
     const dispatch = useDispatch();
 
     const addToCartHandler = () => {
-        dispatch(cartActions.addItemToCart({id: product.id, price: product.price, title: product.title, image: product.image}))
+        dispatch(cartActions.addItemToCart({id: product.id, price: product.price, title: product.title, image: product.image, sale:product.sale, quantity: selectRef.current.value }))
     }
 
     let options = [];
@@ -31,6 +33,9 @@ const ProductDetail = (props) => {
 
             <p className={css.description}>{product.description}</p>
             <h1 className={`${product.sale ? css.salePrice : css.price}`}>{product.price.toFixed(2)}€</h1>
+            <select ref={selectRef}>
+                {options}
+            </select>
             <Button onClick={addToCartHandler} type={'button'}>Add to Cart</Button>
         </section>
     );
