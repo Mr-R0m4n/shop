@@ -20,6 +20,31 @@
     color: #00baff;
 }
 
+.card button,
+.saleCard button {
+    margin-top: 5px;
+    margin-left: 5px;
+    color: #fff;
+    background: #00baff;
+    border: none;
+    border-radius: 6px;
+    padding: 0.35rem;
+    cursor: pointer;
+}
+
+.card button:hover,
+.card button:active,
+.saleCard button:hover,
+.saleCard button:active {
+    background: #66D9FF;
+    border-color: #66D9FF;
+}
+
+.card button:focus,
+.saleCard button:focus {
+    outline: none;
+}
+
 .card span:first-of-type,
 .saleCard span:first-of-type{
     margin-right: 5px;
@@ -36,5 +61,10 @@
     .card strong,
     .saleCard strong {
         display: none;
+    }
+
+    .card button,
+    .saleCard button {
+        font-size: 0.5rem;
     }
 }

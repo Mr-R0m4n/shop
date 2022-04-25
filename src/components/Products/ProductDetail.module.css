@@ -61,6 +61,7 @@
     margin-right: 1rem;
     font-size: 1rem;
     border: #00baff 2px solid;
+    background: #fff;
 }
 
 @media (max-width: 1920px) {

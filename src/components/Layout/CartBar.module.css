@@ -11,6 +11,11 @@
     display: none;
 }
 
+.cartBar h2 {
+    margin-top: 20px;
+    color: #00baff;
+}
+
 .cartBar h3 {
     margin-bottom: 10px;
 }
