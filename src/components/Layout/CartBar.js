@@ -18,23 +18,28 @@ const CartBar = () => {
         dispatch(cartActions.getTotalAmount());
     },[cartData]);
 
+    let cartItems;
+    if(cartData) {
+        cartItems = cartData.map(item => {
+            return <li key={item.id}>
+                <ShoppingCard sale={item.sale} id={item.id}>
+                    <Link to={{pathname: `/product/${item.id}`}}><img className={css.image} src={item.image}
+                                                                      alt={item.name}/></Link>
+                    <div>
+                        <strong>{item.name.slice(0, 16)}...</strong>
+                        <p>
+                            <span>{item.quantity}x</span>
+                            <span>{item.price.toFixed(2)} €</span>
+                        </p>
+                        <b>total: {item.totalPrice.toFixed(2)} €</b>
+                    </div>
+                </ShoppingCard>
+            </li>
+        })
+    } else {
+        cartItems = []
+    }
 
-    const cartItems = cartData.map(item => {
-        return <li key={item.id}>
-            <ShoppingCard sale={item.sale} id={item.id}>
-                <Link to={{pathname: `/product/${item.id}`}}><img className={css.image} src={item.image}
-                                                                  alt={item.name}/></Link>
-                <div>
-                    <strong>{item.name.slice(0, 16)}...</strong>
-                    <p>
-                        <span>{item.quantity}x</span>
-                        <span>{item.price.toFixed(2)} €</span>
-                    </p>
-                    <b>total: {item.totalPrice.toFixed(2)} €</b>
-                </div>
-            </ShoppingCard>
-        </li>
-    })
 
 
     return (
