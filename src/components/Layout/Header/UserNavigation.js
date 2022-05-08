@@ -6,7 +6,7 @@ import Button from "../../UI/Button";
 import css from './UserNavigation.module.css';
 import bag from '../../../assets/bag.svg';
 import user from '../../../assets/user.svg';
-import heart from "../../../assets/heart.svg";
+import heart from "../../../assets/heart-filled.svg";
 
 const UserNavigation = () => {
     const navigate = useNavigate();

@@ -17,7 +17,7 @@ const dataSlice = createSlice({
     reducers: {
         prepareData(state) {
             const data = dummyData.map(product => {
-                return {...product, sale: Math.random() < 0.1};
+                return {...product, sale: Math.random() < 0.1, fav: false};
             });
 
             for(let product of data){

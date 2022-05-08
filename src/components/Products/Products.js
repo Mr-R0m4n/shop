@@ -5,6 +5,7 @@ import css from './Products.module.css';
 
 const Products = () => {
     const apiData = useSelector(state => state.data.filteredProducts);
+    const favItems = useSelector(state => state.fav.favItems);
 
     const products = apiData.map(product => {
         return (
@@ -17,6 +18,7 @@ const Products = () => {
                 count={product.rating.count}
                 price={product.price}
                 sale={product.sale}
+                fav={favItems}
             />
         )
     });

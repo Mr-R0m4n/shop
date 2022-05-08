@@ -7,7 +7,7 @@ import css from './Footer.module.css';
 import bag from "../../../assets/bag.svg";
 import user from "../../../assets/user.svg";
 import home from "../../../assets/home.svg";
-import heart from "../../../assets/heart.svg";
+import heart from "../../../assets/heart-filled.svg";
 
 const Footer = () => {
 
