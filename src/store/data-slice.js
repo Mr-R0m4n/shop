@@ -1,5 +1,4 @@
 import {createSlice} from "@reduxjs/toolkit";
-import axios from "axios";
 import dummyData from '../DUMMY_DATA.json';
 
 const dataSlice = createSlice({
@@ -30,23 +29,6 @@ const dataSlice = createSlice({
             sessionStorage.setItem('products', JSON.stringify(data));
             sessionStorage.setItem('filtered', JSON.stringify(data));
         },
-        // loading(state) {
-        //     state.isLoading = true;
-        // },
-        // hasError(state, action) {
-        //     state.error = action.payload;
-        //     state.isLoading = false;
-        // },
-        // dataSuccess(state, action) {
-        //     const data = action.payload.map(product => {
-        //         return {...product, sale: Math.random() < 0.1};
-        //     });
-        //     state.data = data;
-        //     state.filteredProducts = data;
-        //     sessionStorage.setItem('products', JSON.stringify(data));
-        //     sessionStorage.setItem('filtered', JSON.stringify(data));
-        //     state.isLoading = false;
-        // },
         filter(state) {
             if (state.saleFilter === 'false')
                 state.filteredProducts = state.data.filter(product =>
@@ -75,17 +57,6 @@ const dataSlice = createSlice({
         },
     }
 });
-
-// const {dataSuccess, loading, hasError} = dataSlice.actions;
-// export const fetchShopData = () => async dispatch => {
-//     dispatch(loading());
-//     try {
-//         axios.get('https://fakestoreapi.com/products')
-//             .then((response) => dispatch(dataSuccess(response.data)));
-//     } catch (e) {
-//         dispatch(hasError);
-//     }
-// };
 
 export const dataActions = dataSlice.actions;
 export default dataSlice.reducer;

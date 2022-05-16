@@ -2,7 +2,6 @@ import {useDispatch, useSelector} from "react-redux";
 import {validActions} from "../../store/valid-slice";
 import {authActions} from "../../store/auth-slice";
 import {useNavigate} from "react-router-dom";
-import Button from "../UI/Button";
 
 import css from "./Login.module.css";
 

@@ -12,6 +12,15 @@
     display: none;
 }
 
+.fav {
+    height: 50px;
+    position: absolute;
+}
+
+.fav:hover {
+    cursor: pointer;
+}
+
 .title {
     margin: 20px 0 30px 0;
 }
@@ -75,6 +84,10 @@
 }
 
 @media (max-width: 1024px) {
+    .fav {
+        height: 40px;
+    }
+
     .product {
         height: calc(100vh - 50px);
     }
@@ -101,5 +114,11 @@
     .product select {
         height: 31px;
         font-size: 0.7rem;
+    }
+}
+
+@media (max-width: 420px) {
+    .fav {
+        height: 30px;
     }
 }

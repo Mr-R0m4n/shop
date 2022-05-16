@@ -4,22 +4,31 @@ import css from './Card.module.css';
 import star from "../../assets/star-filled.svg";
 import heart from "../../assets/heart.svg";
 import heartFilled from "../../assets/heart-filled-blue.svg";
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {favActions} from "../../store/fav-slice";
 
 const Card = (props) => {
+    const favItems = useSelector(state => state.fav.favItems);
     const dispatch = useDispatch()
 
     const favChangeHandler = () => {
         dispatch(favActions.toggleFavItem(props.id))
     }
 
+    let favIcon;
+    if(favItems) {
+        favIcon = favItems.find(item => item.id === props.id) ?
+            <img onClick={favChangeHandler} className={css.fav} src={heartFilled} alt={'favHeart'}/> :
+            <img onClick={favChangeHandler} className={css.fav} src={heart} alt={'favHeart'}/>
+    }
+    else {
+        favIcon = <img onClick={favChangeHandler} className={css.fav} src={heart} alt={'favHeart'}/>
+    }
+
     return (
         <div className={`${props.sale ? css.saleCard : css.card}`}>
             {
-                props.fav.find(item => item.id === props.id) ?
-                    <img onClick={favChangeHandler} className={css.fav} src={heartFilled} alt={'favHeart'}/> :
-                    <img onClick={favChangeHandler} className={css.fav} src={heart} alt={'favHeart'}/>
+                favIcon
             }
             <Link to={`/product/${props.id}`}>
                 <img className={css.image} src={props.image} alt={props.title}/>

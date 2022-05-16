@@ -5,15 +5,23 @@ import Button from "../UI/Button";
 import css from './ProductDetail.module.css'
 import star from "../../assets/star-filled.svg";
 import {useRef} from "react";
+import heartFilled from "../../assets/heart-filled-blue.svg";
+import heart from "../../assets/heart.svg";
+import {favActions} from "../../store/fav-slice";
 
 const ProductDetail = (props) => {
     const selectRef = useRef();
     const apiData = useSelector(state => state.data.data);
-    const product = apiData.find(product => product.id === +props.productId.productId)
+    const favItems = useSelector(state => state.fav.favItems);
+    const product = apiData.find(product => product.id === +props.id.productId)
     const dispatch = useDispatch();
 
     const addToCartHandler = () => {
         dispatch(cartActions.addItemToCart({id: product.id, price: product.price, title: product.title, image: product.image, sale:product.sale, quantity: selectRef.current.value }))
+    }
+
+    const favChangeHandler = () => {
+        dispatch(favActions.toggleFavItem(+props.id.productId))
     }
 
     let options = [];
@@ -21,10 +29,23 @@ const ProductDetail = (props) => {
         options.push(<option key={i} value={i}>{i}</option> )
     }
 
+    let favIcon;
+    if(favItems) {
+        favIcon = favItems.find(item => item.id === +props.id.productId) ?
+            <img onClick={favChangeHandler} className={css.fav} src={heartFilled} alt={'favHeart'}/> :
+            <img onClick={favChangeHandler} className={css.fav} src={heart} alt={'favHeart'}/>
+    }
+    else {
+        favIcon = <img onClick={favChangeHandler} className={css.fav} src={heart} alt={'favHeart'}/>
+    }
+
     return (
         <section className={css.product}>
             <h1 className={css.title}>{product.title}</h1>
             <img className={css.image} src={product.image} alt={product.title}/>
+            {
+                favIcon
+            }
             <div className={css.rating}>
                 <img className={css.star} src={star} alt={'ratingStar'}/>
                 <span className={css.rate}>{product.rating.rate}</span>

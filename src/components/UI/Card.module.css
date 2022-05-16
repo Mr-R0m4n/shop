@@ -4,7 +4,7 @@
     padding: 0 25px;
     border: solid 2px #ddd;
     display: grid;
-    grid-template-rows: 5% 65% 20% 10%;
+    grid-template-rows: 10% 60% 20% 10%;
 }
 
 .saleCard {
@@ -83,7 +83,10 @@
     .card,
     .saleCard{
         padding: 0 20px;
-        grid-template-rows: 5% 65% 20% 10%;
+    }
+
+    .fav {
+        height: 35px;
     }
 
     .image {
@@ -123,7 +126,7 @@
     .card,
     .saleCard{
         padding: 0 20px;
-        grid-template-rows: 5% 45% 30% 20%;
+        grid-template-rows: 10% 40% 30% 20%;
     }
 
     .image {
