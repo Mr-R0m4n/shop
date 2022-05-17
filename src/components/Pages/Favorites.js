@@ -1,17 +1,20 @@
 import {Fragment} from "react";
 import Header from "../Layout/Header/Header";
 import Footer from "../Layout/Footer/Footer";
-import {useSelector} from "react-redux";
+import CartBar from "../Layout/CartBar";
+
+import css from './Favorites.module.css'
+import FavProducts from "../Products/FavProducts";
 
 const Favorites = () => {
-
-    const favoriteItems = useSelector(state => state.fav.favItems);
-    console.log(favoriteItems)
 
     return (
         <Fragment>
             <Header/>
-            <h1>FAVORITES</h1>
+            <main className={css.container}>
+                <FavProducts/>
+                <CartBar/>
+            </main>
             <Footer/>
         </Fragment>
     );

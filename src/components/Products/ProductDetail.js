@@ -1,13 +1,13 @@
 import {useDispatch, useSelector} from "react-redux";
-import {cartActions} from "../../store/cart-slice";
+import {useRef} from "react";
 import Button from "../UI/Button";
+import {cartActions} from "../../store/cart-slice";
+import {favActions} from "../../store/fav-slice";
 
 import css from './ProductDetail.module.css'
 import star from "../../assets/star-filled.svg";
-import {useRef} from "react";
 import heartFilled from "../../assets/heart-filled-blue.svg";
 import heart from "../../assets/heart.svg";
-import {favActions} from "../../store/fav-slice";
 
 const ProductDetail = (props) => {
     const selectRef = useRef();
