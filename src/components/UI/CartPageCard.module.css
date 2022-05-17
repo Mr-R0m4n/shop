@@ -1,0 +1,56 @@
+.card {
+    border-radius: 25px;
+    padding: 20px;
+    border: solid 2px #ddd;
+    display: flex;
+    justify-content: space-between;
+    width: 35%;
+    min-height: 200px;
+    margin-bottom: 15px;
+}
+
+.card a {
+    align-self: center;
+}
+
+.image {
+    height: 150px;
+}
+
+.cardContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 55%;
+}
+
+.name {
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.total {
+    font-weight: bold;
+}
+
+.button {
+    border: none;
+    background: #00baff;
+    color: white;
+    padding: 0.5rem 0.75rem;
+    cursor: pointer;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    margin: 2.5px;
+    min-width: 35px;
+}
+
+.button:hover,
+.button:active {
+    background: #66D9FF;
+    border-color: #66D9FF;
+}
+
+.button:focus {
+    outline: none;
+}

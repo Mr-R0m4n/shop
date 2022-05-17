@@ -1,6 +1,7 @@
-import css from './ShoppingCard.module.css';
 import {useDispatch} from "react-redux";
 import {cartActions} from "../../store/cart-slice";
+
+import css from './ShoppingCard.module.css';
 
 const ShoppingCard = (props) => {
     const dispatch = useDispatch();
