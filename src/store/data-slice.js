@@ -11,7 +11,8 @@ const dataSlice = createSlice({
         categoryFilter: '',
         ratingFilter: 0,
         priceFilter: [0, 100000],
-        saleFilter: 'false'
+        saleFilter: 'false',
+        searchFilter: ''
     },
     reducers: {
         prepareData(state) {
@@ -34,12 +35,14 @@ const dataSlice = createSlice({
                 state.filteredProducts = state.data.filter(product =>
                     product.category.includes(state.categoryFilter) &&
                     product.rating.rate > state.ratingFilter &&
-                    product.price > state.priceFilter[0] && product.price < state.priceFilter[1]);
+                    product.price > state.priceFilter[0] && product.price < state.priceFilter[1] &&
+                    product.title.toLowerCase().includes(state.searchFilter));
             else
                 state.filteredProducts = state.data.filter(product =>
                     product.category.includes(state.categoryFilter) &&
                     product.rating.rate > state.ratingFilter &&
                     product.price > state.priceFilter[0] && product.price < state.priceFilter[1] &&
+                    product.title.toLowerCase().includes(state.searchFilter) &&
                     String(product.sale) === state.saleFilter);
         },
         categoryFilter(state, action) {
@@ -55,6 +58,9 @@ const dataSlice = createSlice({
         saleFilter(state, action) {
             state.saleFilter = action.payload;
         },
+        search(state, action) {
+            state.searchFilter = action.payload.toLowerCase();
+        }
     }
 });
 

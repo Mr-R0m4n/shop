@@ -4,9 +4,10 @@
     border: solid 2px #ddd;
     display: flex;
     justify-content: space-between;
-    width: 35%;
+    width: 25%;
     min-height: 200px;
     margin-bottom: 15px;
+    text-align: right;
 }
 
 .card a {
@@ -53,4 +54,43 @@
 
 .button:focus {
     outline: none;
+}
+
+@media (max-width: 2560px) {
+    .card {
+        width: 35%;
+    }
+}
+
+@media (max-width: 1920px) {
+    .card {
+        width: 45%;
+    }
+}
+
+@media (max-width: 1024px) {
+    .card {
+        width: 80%;
+    }
+}
+
+@media (max-width: 786px) {
+    .card {
+        width: 100%;
+    }
+}
+
+@media (max-width: 420px) {
+    .image {
+        height: 50px;
+    }
+
+    .cardInfo {
+        font-size: .8rem;
+    }
+
+    .button {
+        padding: 0.5rem 0.65rem;
+        font-size: 0.7rem;
+    }
 }

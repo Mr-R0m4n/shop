@@ -6,15 +6,23 @@
     overflow-y: scroll;
     -ms-overflow-style: none;
     scrollbar-width: none;
+    align-items: center;
 }
 
 .product::-webkit-scrollbar {
     display: none;
 }
 
+.image {
+    max-height: 50%;
+    max-width: 90%;
+    margin-bottom: 20px;
+}
+
 .fav {
-    height: 50px;
-    position: absolute;
+    height: 35px;
+    width: 30px;
+    margin-bottom: 20px;
 }
 
 .fav:hover {
@@ -23,12 +31,6 @@
 
 .title {
     margin: 20px 0 30px 0;
-}
-
-.image {
-    max-height: 50%;
-    max-width: 90%;
-    margin-bottom: 20px;
 }
 
 .rate {
