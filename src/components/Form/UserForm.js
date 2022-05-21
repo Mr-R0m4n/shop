@@ -43,7 +43,7 @@ const UserForm = () => {
     return (
         <div className={css.userForm}>
             <img className={css.avatar} src={avatar} alt={'avatar'}></img>
-            <form className={css.userInformation}>
+            <form className={`${css.userInformation} ${isDisabled ? css.savedInformation : css.editUserInformation}`}>
                 <label><span>Firstname: </span><input disabled={isDisabled}
                                                       className={user[0].length > 0 ? css.valid : css.invalid}
                                                       defaultValue={user[0].length < 0 ? '' : user[0]}

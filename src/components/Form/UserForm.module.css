@@ -23,6 +23,16 @@
     display: flex;
     flex-direction: column;
     width: 30%;
+    padding: 1.5rem;
+    border-radius: 20px;
+}
+
+.editUserInformation {
+    border: 4px dashed #66D9FF
+}
+
+.savedInformation {
+    border: 4px solid #00baff;
 }
 
 .userInformation label > span {

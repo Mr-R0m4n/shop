@@ -32,8 +32,8 @@ const CartPageCard = (props) => {
                     <p className={css.total}>total: {props.totalPrice.toFixed(2)} €</p>
                 </div>
                 <div className={css.buttonContainer}>
-                    <button className={css.button} onClick={increaseItemFromCart} type={'button'}>+</button>
                     <button className={css.button} onClick={decreaseItemFromCart} type={'button'}>-</button>
+                    <button className={css.button} onClick={increaseItemFromCart} type={'button'}>+</button>
                     <button className={css.button} onClick={removeFromCartHandler} type={'button'}>Remove</button>
                 </div>
             </div>
