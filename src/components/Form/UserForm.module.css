@@ -1,0 +1,93 @@
+.userForm {
+    grid-area: 1 / 2 / 2 / 3;
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.userForm::-webkit-scrollbar {
+    display: none;
+}
+
+.avatar {
+    height: 200px;
+    border: 5px solid #00baff;
+    border-radius: 50%;
+    margin: 40px 0;
+}
+
+.userInformation {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+}
+
+.userInformation label > span {
+    float: left;
+    width: 100px;
+    color: #00baff;
+    font-weight: bold;
+    font-size: 13px;
+    margin-right: 10px;
+}
+
+.userInformation input[type=text] {
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    outline: none;
+    padding: 5px 8px 5px 8px;
+    margin-bottom: 10px;
+    width: calc(100% - 110px);
+}
+
+.valid {
+    border: 1px solid #ccc;
+}
+
+.valid:focus {
+    outline: none;
+    border: 2px solid #222831;
+    background: rgba(102, 217, 255, 0.3);
+}
+
+.invalid {
+    border: 1px solid red;
+    background: #fbdada;
+}
+
+.invalid:focus {
+    outline: none;
+    border: 2px solid red;
+}
+
+.buttonVisible {
+    width: 100px;
+    align-self: center;
+    margin-top: 20px;
+}
+
+.buttonInvisible {
+    display: none;
+}
+
+@media (max-width: 1024px) {
+    .userInformation {
+        width: 60%;
+    }
+}
+
+@media (max-width: 786px) {
+    .userInformation {
+        width: 80%;
+    }
+}
+
+@media (max-width: 420px) {
+    .userInformation {
+        width: 100%;
+    }
+}

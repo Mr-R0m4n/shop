@@ -4,6 +4,7 @@ import dataReducer from './data-slice';
 import validReducer from './valid-slice';
 import cartReducer from './cart-slice'
 import favReducer from './fav-slice'
+import userReducer from './user-slice'
 
 
 const store = configureStore({
@@ -12,7 +13,8 @@ const store = configureStore({
         data: dataReducer,
         valid: validReducer,
         cart: cartReducer,
-        fav: favReducer
+        fav: favReducer,
+        user: userReducer
     }
 });
 
