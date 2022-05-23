@@ -72,6 +72,11 @@ const cartSlice = createSlice({
             if (state.items) {
                 state.totalAmount = state.items.reduce((acc, curr) => acc + curr.totalPrice, 0);
             }
+        },
+        removeAllItems(state) {
+            let cartItems = [];
+            state.items = cartItems;
+            sessionStorage.setItem('cartItems', JSON.stringify(cartItems));
         }
     },
 });

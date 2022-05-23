@@ -1,12 +1,13 @@
-import {useNavigate} from "react-router-dom";
-import {useDispatch} from "react-redux";
-import {authActions} from "../../../store/auth-slice";
-import Button from "../../UI/Button";
+import {useNavigate} from 'react-router-dom';
+import {useDispatch} from 'react-redux';
+import {authActions} from '../../../store/auth-slice';
+import {validActions} from '../../../store/valid-slice';
+import Button from '../../UI/Button';
 
 import css from './UserNavigation.module.css';
 import bag from '../../../assets/bag.svg';
 import user from '../../../assets/user.svg';
-import heart from "../../../assets/heart-filled.svg";
+import heart from '../../../assets/heart-filled.svg';
 
 const UserNavigation = () => {
     const navigate = useNavigate();
@@ -26,6 +27,7 @@ const UserNavigation = () => {
 
     const buttonLogout = () => {
         navigate('/');
+        dispatch(validActions.setValidationFalse());
         dispatch(authActions.onLogout());
     };
 

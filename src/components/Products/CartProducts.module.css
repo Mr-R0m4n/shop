@@ -27,6 +27,10 @@
     margin: 50px 0;
 }
 
+.checkOut {
+    margin-bottom: 70px;
+}
+
 @media (max-width: 1024px) {
     .favProducts {
         grid-template-columns: 25% 25% 25%;
@@ -45,5 +49,9 @@
         grid-template-columns: 100%;
         grid-auto-rows: 300px;
         padding-bottom: 70px;
+    }
+
+    .total {
+        font-size: 1.3rem;
     }
 }

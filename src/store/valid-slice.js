@@ -30,6 +30,12 @@ const validSlice = createSlice({
         setInputIsTouchedFalse(state) {
             state.emailInputIsTouched = false;
             state.passwordInputIsTouched = false;
+        },
+        setValidationFalse(state) {
+            state.emailIsValid = false;
+            state.passwordIsValid = false;
+            state.emailInputIsTouched = false;
+            state.passwordInputIsTouched = false;
         }
     }
 });

@@ -1,0 +1,23 @@
+.card {
+    padding: 25px 50px;
+    border-bottom: solid 2px #aaa;
+    width: 50%;
+}
+
+.name {
+    font-weight: bold;
+}
+
+.quantityPrice {
+    margin: 5px 0;
+}
+
+.totalPrice {
+    font-weight: bold;
+}
+
+@media (max-width: 420px) {
+    .card {
+        width: 90%;
+    }
+}

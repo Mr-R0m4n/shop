@@ -6,6 +6,7 @@ import {useEffect, useState} from 'react';
 import {cartActions} from "../../store/cart-slice";
 import Button from '../UI/Button';
 import Modal from '../UI/Modal';
+import ModalCard from '../UI/ModalCard';
 
 const CartProducts = () => {
     const [modalShown, setModalShown] = useState(false);
@@ -25,6 +26,11 @@ const CartProducts = () => {
     }
 
     const hideModal = () => {
+        setModalShown(false)
+    }
+
+    const placeOrder = () => {
+        dispatch(cartActions.removeAllItems());
         setModalShown(false)
     }
 
@@ -48,22 +54,44 @@ const CartProducts = () => {
         cartItems = []
     }
 
+    let modalItems;
+    if(cartData) {
+        modalItems = cartData.map(item => {
+            return (
+                <ModalCard
+                    id = {item.id}
+                    key = {item.id}
+                    name = {item.name}
+                    quantity = {item.quantity}
+                    price = {item.price}
+                    totalPrice = {item.totalPrice}
+                />
+            )
+        })
+    }
+
     let modal;
     if (!cartData || cartData.length <= 0) {
         modal = <Modal hideModal={hideModal}>
                     <p>Your shopping bag is empty</p>
+                    <Button onClick={hideModal}>Close</Button>
                 </Modal>
     }
     else if (!validUserInfo) {
         modal = <Modal hideModal={hideModal}>
-            <p>Please fill out your shipping Information in your User page before checking out</p>
-        </Modal>
+                    <p>Please fill out shipping Information in User page before checking out</p>
+                    <Button onClick={hideModal}>Close</Button>
+                </Modal>
     }
     else {
         modal = <Modal hideModal={hideModal}>
-            <p>Your Products</p>
-            <Button onClick={hideModal}>Order</Button>
-            <Button onClick={hideModal}>Cancel</Button>
+            <h2>Order summary</h2>
+            {modalItems}
+            {totalAmount > 0 ? <h2 className={css.total}>Total amount: {totalAmount.toFixed(2)} €</h2> : <br/>}
+            <div>
+                <Button onClick={placeOrder}>Order</Button>
+                <Button onClick={hideModal}>Cancel</Button>
+            </div>
         </Modal>
     }
 
@@ -72,8 +100,7 @@ const CartProducts = () => {
             <h3 className={css.head}>Your shopping bag</h3>
             {cartItems.length === 0 ? <p className={css.empty}>. . . is Empty</p> : cartItems}
             {totalAmount > 0 ? <h2 className={css.total}>Total amount: {totalAmount.toFixed(2)} €</h2> : <br/>}
-            <Button onClick={checkOutHandler}>Check out</Button>
-
+            <Button className={css.checkOut} onClick={checkOutHandler}>Check out</Button>
             {modalShown ? modal : ''}
         </main>
     );

@@ -20,6 +20,23 @@
     border-radius: 2rem;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
     z-index: 30;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.modal::-webkit-scrollbar {
+    display: none;
+}
+
+.modal button {
+    margin-top: 25px;
+    margin-right: 10px;
+    margin-left: 10px;
 }
 
 @media (max-width: 1450px) {
@@ -28,5 +45,11 @@
         left: 10%;
         width: 80%;
         height: 80%;
+    }
+}
+
+@media (max-width: 420px) {
+    .modal {
+        padding: 0;
     }
 }
